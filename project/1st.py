@@ -6,7 +6,7 @@ root.title("I am a top level widget,parent to other widgets")
 #button=Button(root,text="I am a button") #we defined an instance of a Button widget. This is also bound to the root window as its parent.
 #label.pack() #We used the pack() method, which is essentially required to position the label and button widgets within the window. 
 #button.pack()
-indhu=tk.Frame(root,relief="raised",bd=2)
+indhu=tk.Frame(root,relief="raised",bd=25)
 indhu.pack(fill=tk.X)
 snega=tk.Menubutton(indhu,text="Snake babu",)
 snega.pack(side=tk.LEFT)
@@ -20,6 +20,23 @@ twovand=tk.Menu(vandana,tearoff=100)
 vandana["menu"]=twovand
 twovand.add("command",label="surya")
 
+my_frame_1=tk.Frame(root,bd=75,relief=tk.SUNKEN)
+my_frame_1.pack(side=tk.LEFT)
+tk.Label(my_frame_1,text="just chill just chill").pack()
+tv=tk.StringVar()
+tk.Entry(my_frame_1,textvariable=tv).pack()
+tv.set("I am an antry widget")
+tk.Button(my_frame_1,text="button widget").pack()
+tk.Checkbutton(my_frame_1,text="Check button widget").pack()
+tk.Radiobutton(my_frame_1,text="rb 1",value=1).pack()
+tk.Radiobutton(my_frame_1,text="rb 2",value=2).pack()
+tk.Radiobutton(my_frame_1,text="rb 3",value=3).pack()
+
+tk.Label(my_frame_1,text="OptionMenu widget example").pack()
+tk.OptionMenu(my_frame_1,'',"Option A","Option B","Option C").pack()
+
+tk.Label(my_frame_1,text="Image fun with Bitmap Class").pack()
+my_image=tk.BitmapImage(file="blb.jpeg")
 
 
 root.mainloop()  
