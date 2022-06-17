@@ -36,8 +36,19 @@ tk.Label(my_frame_1,text="OptionMenu widget example").pack()
 tk.OptionMenu(my_frame_1,'',"Option A","Option B","Option C").pack()
 
 tk.Label(my_frame_1,text="Image fun with Bitmap Class").pack()
-my_image=tk.BitmapImage(file="blb.jpeg")
+my_image=tk.BitmapImage(file="D:\sem4\APP\project\sample.xbm")
 
+my_label=tk.Label(my_frame_1,image=my_image)
+my_label.image=my_image
+my_label.pack()
+
+my_frame_2=tk.Frame(root,bd=10,relief=tk.GROOVE)
+my_frame_2.pack(side=tk.LEFT)
+tk.Label(my_frame_2,text="Image displayed with\n PhotoImage class widget").pack()
+yen_photo=tk.PhotoImage(file="D:\sem4\APP\project\cir.gif")
+
+yen_photo_label=tk.Label(my_frame_2,image=yen_photo)
+yen_photo_label.pack()
 
 root.mainloop()  
 """The  line executed the mainloop (that is, the event loop) method of the root object. The mainloop method is what keeps the root window visible. 
