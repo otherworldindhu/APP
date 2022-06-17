@@ -1,10 +1,24 @@
-from tkinter import *   # imported all (*) the classes, attributes, and methods of Tkinter into the current workspace.
-root=Tk()      #The second line created an instance of the tkinter.Tk class. This created what is called the "root" window 
-label=Label(root,text="I am a label widget") #added a new instance named label for the Label widget. The first parameter defined root as its parent or container. The second parameter configured its text option as I am a label widget.
-button=Button(root,text="I am a button") #we defined an instance of a Button widget. This is also bound to the root window as its parent.
-label.pack() #We used the pack() method, which is essentially required to position the label and button widgets within the window. 
-button.pack()
+import tkinter as tk   
+root=tk.Tk()      #The second line created an instance of the tkinter.Tk class. This created what is called the "root" window 
 
+root.title("I am a top level widget,parent to other widgets")
+#label=Label(root,text="I am a label widget") #added a new instance named label for the Label widget. The first parameter defined root as its parent or container. The second parameter configured its text option as I am a label widget.
+#button=Button(root,text="I am a button") #we defined an instance of a Button widget. This is also bound to the root window as its parent.
+#label.pack() #We used the pack() method, which is essentially required to position the label and button widgets within the window. 
+#button.pack()
+indhu=tk.Frame(root,relief="raised",bd=2)
+indhu.pack(fill=tk.X)
+snega=tk.Menubutton(indhu,text="Snake babu",)
+snega.pack(side=tk.LEFT)
+thanishka=tk.Menu(snega,tearoff=35)
+snega["menu"]=thanishka
+thanishka.add("command",label="Niranchana")
+
+vandana=tk.Menubutton(indhu,text="Vand bunz")
+vandana.pack(side=tk.TOP)
+twovand=tk.Menu(vandana,tearoff=100)
+vandana["menu"]=twovand
+twovand.add("command",label="surya")
 
 
 
