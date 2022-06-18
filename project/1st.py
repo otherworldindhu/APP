@@ -46,9 +46,20 @@ my_frame_2=tk.Frame(root,bd=10,relief=tk.GROOVE)
 my_frame_2.pack(side=tk.LEFT)
 tk.Label(my_frame_2,text="Image displayed with\n PhotoImage class widget").pack()
 yen_photo=tk.PhotoImage(file="D:\sem4\APP\project\cir.gif")
-
 yen_photo_label=tk.Label(my_frame_2,image=yen_photo)
 yen_photo_label.pack()
+
+tk.Label(my_frame_2,text="Below is an example of listbox widget").pack()
+my_listbox=tk.Listbox(my_frame_2,height=4)
+for line in ['Listbox Choice 1','Choice 2','Choice 3','Choice 4']:
+    my_listbox.insert(tk.END,line)
+my_listbox.pack()
+
+tk.Label(my_frame_2,text="Below is an example of spinbox widget").pack()
+tk.Spinbox(my_frame_2,values=(1,2,4,8,10)).pack()
+
+tk.Scale(my_frame_2,from_=0.0,to=100.0,label='Scale widget',orient=tk.HORIZONTAL).pack()
+
 
 root.mainloop()  
 """The  line executed the mainloop (that is, the event loop) method of the root object. The mainloop method is what keeps the root window visible. 
