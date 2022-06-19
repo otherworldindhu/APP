@@ -41,6 +41,7 @@ my_image=tk.BitmapImage(file="D:\sem4\APP\project\sample.xbm")
 my_label=tk.Label(my_frame_1,image=my_image)
 my_label.image=my_image
 my_label.pack()
+'''
 
 my_frame_2=tk.Frame(root,bd=10,relief=tk.GROOVE)
 my_frame_2.pack(side=tk.LEFT)
@@ -59,6 +60,50 @@ tk.Label(my_frame_2,text="Below is an example of spinbox widget").pack()
 tk.Spinbox(my_frame_2,values=(1,2,4,8,10)).pack()
 
 tk.Scale(my_frame_2,from_=0.0,to=100.0,label='Scale widget',orient=tk.HORIZONTAL).pack()
+
+label_frame=tk.LabelFrame(my_frame_2,text="Label frame widget",padx=10,pady=10)
+label_frame.pack(padx=10,pady=10)
+tk.Entry(label_frame).pack()
+
+tk.Message(my_frame_2,text="I am a message widget").pack()
+'''
+my_frame_3=tk.Frame(root,bd=3,relief=tk.SUNKEN)
+
+my_text=tk.Text(my_frame_3,height=1,width=4)
+file_object=open('D:\sem4\APP\project\my_text_doc.txt')
+file_content=file_object.read()
+file_object.close()
+my_text.insert(tk.END,file_content)
+my_text.pack(side=tk.LEFT,fill=tk.X,padx=5)
+
+my_scrollbar = tk.Scrollbar(my_frame_3, orient=tk.VERTICAL, command=my_text.yview)
+my_scrollbar.pack()
+my_text.configure(yscrollcommand=my_scrollbar.set)
+my_frame_3.pack()
+
+my_frame_4=tk.Frame(root)
+my_frame_4.pack()
+my_canvas=tk.Canvas(my_frame_4,bg='purple',width=340,height=80)
+my_canvas.pack()
+my_canvas.create_oval(20,15,60,60,fill='white')
+my_canvas.create_oval(40,15,60,60,fill='yellow')
+my_canvas.create_text(130,38,text='I am a Canvas widget',font=("arial",8,'bold'))
+
+
+tk.Label(root, text='Below is an example of Paned window widget:').pack()
+tk.Label(
+    root,
+    text='Notice you can adjust the size of each pane by dragging it').pack()
+my_paned_window_1 = tk.PanedWindow()
+my_paned_window_1.pack(fill=tk.BOTH, expand=2)
+left_pane_text = tk.Text(my_paned_window_1, height=6, width=15)
+my_paned_window_1.add(left_pane_text)
+my_paned_window_2 = tk.PanedWindow(my_paned_window_1, orient=tk.VERTICAL)
+my_paned_window_1.add(my_paned_window_2)
+top_pane_text = tk.Text(my_paned_window_2, height=3, width=3)
+my_paned_window_2.add(top_pane_text)
+bottom_pane_text = tk.Text(my_paned_window_2, height=3, width=3)
+my_paned_window_2.add(bottom_pane_text)
 
 
 root.mainloop()  
