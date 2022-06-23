@@ -1,0 +1,1 @@
+name_lengths = map(len, ["Bob", "Rob", "Bobby"])
