@@ -6,7 +6,7 @@ queens(X0)                      <= (X0._in(range(8)))
 # to find the queens in the first 2 columns, find the first one first, then find a second one
 queens(X0,X1)                   <= queens(X0)                   & next_queen(X0,X1)
 # repeat for the following queens
-queens(X0,X1,X2)                <= queens(X0,X1)                & next_queen(X0,X1,X2)
+queens(X0,X1,X2)           <= queens(X0,X1)                & next_queen(X0,X1,X2)
 queens(X0,X1,X2,X3)             <= queens(X0,X1,X2)             & next_queen(X0,X1,X2,X3)
 queens(X0,X1,X2,X3,X4)          <= queens(X0,X1,X2,X3)          & next_queen(X0,X1,X2,X3,X4)
 queens(X0,X1,X2,X3,X4,X5)       <= queens(X0,X1,X2,X3,X4)       & next_queen(X0,X1,X2,X3,X4,X5)
